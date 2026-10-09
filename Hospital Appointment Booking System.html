@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Appointment Booking</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#eaf6ff;
+}
+
+.container{
+    width:450px;
+    margin:40px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+h1{
+    text-align:center;
+    color:#0066cc;
+}
+
+label{
+    font-weight:bold;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    box-sizing:border-box;
+}
+
+.gender{
+    margin-bottom:15px;
+}
+
+button{
+    width:48%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.submit{
+    background:#007bff;
+    color:white;
+}
+
+.reset{
+    background:#dc3545;
+    color:white;
+}
+
+button:hover{
+    opacity:0.8;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Hospital Appointment Booking</h1>
+
+<form>
+
+<label>Patient Name</label>
+<input type="text" placeholder="Enter your name">
+
+<label>Age</label>
+<input type="number" placeholder="Enter age">
+
+<label>Gender</label>
+<div class="gender">
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<input type="radio" name="gender"> Other
+</div>
+
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter phone number">
+
+<label>Email</label>
+<input type="email" placeholder="Enter email">
+
+<label>Department</label>
+<select>
+<option>Select Department</option>
+<option>General Medicine</option>
+<option>Cardiology</option>
+<option>Orthopedics</option>
+<option>Dermatology</option>
+<option>Pediatrics</option>
+</select>
+
+<label>Doctor</label>
+<select>
+<option>Select Doctor</option>
+<option>Dr. Anil</option>
+<option>Dr. Priya</option>
+<option>Dr. Rahul</option>
+<option>Dr. Meera</option>
+</select>
+
+<label>Appointment Date</label>
+<input type="date">
+
+<label>Appointment Time</label>
+<input type="time">
+
+<label>Symptoms</label>
+<textarea rows="4" placeholder="Describe your symptoms"></textarea>
+
+<button type="submit" class="submit">Book Appointment</button>
+<button type="reset" class="reset">Reset</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

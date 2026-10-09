@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+        }
+
+        .container{
+            width:400px;
+            margin:50px auto;
+            background-color:white;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px gray;
+        }
+
+        h1{
+            text-align:center;
+            color:blue;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        input,
+        textarea,
+        select{
+            width:100%;
+            padding:8px;
+            margin-top:5px;
+            margin-bottom:15px;
+            border:1px solid gray;
+            border-radius:5px;
+            box-sizing:border-box;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background-color:blue;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-size:16px;
+        }
+
+        button:hover{
+            background-color:darkblue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Feedback Form</h2>
+
+        <form>
+
+            <label>Name</label>
+            <input type="text" placeholder="Enter your name">
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email">
+
+            <label>Course</label>
+            <select>
+                <option>Select Course</option>
+                <option>BSc</option>
+                <option>BCA</option>
+                <option>MSc Data Science</option>
+            </select>
+
+            <label>Rating</label><br>
+
+            <input type="radio" name="rating"> Excellent
+            <input type="radio" name="rating"> Good
+            <input type="radio" name="rating"> Average
+
+            <br><br>
+
+            <label>Comments</label>
+            <textarea rows="4" placeholder="Write your feedback"></textarea>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Applications</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+
+        #output {
+            background-color: #282c34;
+            color: #61dafb;
+            padding: 20px;
+            font-family: monospace;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        input, button {
+            margin: 5px;
+            padding: 8px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>JavaScript Fundamentals</h2>
+
+    <!-- Calculator -->
+    <section>
+        <h3>Calculator</h3>
+
+        <input type="number" id="num1" placeholder="Number 1">
+        <input type="number" id="num2" placeholder="Number 2">
+
+        <br>
+
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('*')">*</button>
+        <button onclick="calculate('/')">/</button>
+
+        <p id="calcResult"></p>
+    </section>
+
+
+    <!-- Age Calculator -->
+    <section>
+        <h3>Age Calculator</h3>
+
+        <input type="date" id="dob">
+        <button onclick="calculateAge()">Calculate Age</button>
+
+        <p id="ageResult"></p>
+    </section>
+
+
+    <!-- Grade Calculator -->
+    <section>
+        <h3>Grade Calculator</h3>
+
+        <input type="number" id="mark" placeholder="Enter mark">
+
+        <button onclick="calculateGrade()">Calculate Grade</button>
+
+        <p id="gradeResult"></p>
+    </section>
+
+
+    <div id="output"></div>
+
+
+    <script>
+
+        const display = document.getElementById("output");
+
+        function primeOutput(text) {
+            display.innerHTML += text + "<br><br>";
+        }
+
+
+        // Calculator
+        function calculate(operator) {
+
+            let num1Value = document.getElementById("num1").value;
+            let num2Value = document.getElementById("num2").value;
+
+            if (num1Value === "" || num2Value === "") {
+                document.getElementById("calcResult").innerHTML =
+                    "Please enter both numbers.";
+                return;
+            }
+
+            let num1 = Number(num1Value);
+            let num2 = Number(num2Value);
+
+            let result;
+
+            if (operator === "+") {
+                result = num1 + num2;
+
+            } else if (operator === "-") {
+                result = num1 - num2;
+
+            } else if (operator === "*") {
+                result = num1 * num2;
+
+            } else if (operator === "/") {
+
+                if (num2 === 0) {
+                    result = "Error: Division by zero!";
+                } else {
+                    result = num1 / num2;
+                }
+
+            } else {
+                result = "Invalid operator!";
+            }
+
+            document.getElementById("calcResult").innerHTML =
+                "Result: " + result;
+        }
+
+
+        // Age Calculator
+        function calculateAge() {
+
+            let dobValue = document.getElementById("dob").value;
+
+            if (dobValue === "") {
+                document.getElementById("ageResult").innerHTML =
+                    "Please select your date of birth.";
+                return;
+            }
+
+            let dob = new Date(dobValue);
+            let today = new Date();
+
+            if (dob > today) {
+                document.getElementById("ageResult").innerHTML =
+                    "Date of birth cannot be in the future.";
+                return;
+            }
+
+            let age = today.getFullYear() - dob.getFullYear();
+
+            let monthDiff =
+                today.getMonth() - dob.getMonth();
+
+            if (
+                monthDiff < 0 ||
+                (monthDiff === 0 &&
+                 today.getDate() < dob.getDate())
+            ) {
+                age--;
+            }
+
+            document.getElementById("ageResult").innerHTML =
+                "Your Age: " + age + " years";
+        }
+
+
+        // Grade Calculator
+        function calculateGrade() {
+
+            let markValue = document.getElementById("mark").value;
+
+            if (markValue === "") {
+                document.getElementById("gradeResult").innerHTML =
+                    "Please enter a mark.";
+                return;
+            }
+
+            let mark = Number(markValue);
+
+            let grade;
+
+            if (mark < 0 || mark > 100) {
+
+                grade = "Invalid mark!";
+
+            } else if (mark >= 90) {
+
+                grade = "A";
+
+            } else if (mark >= 80) {
+
+                grade = "B";
+
+            } else if (mark >= 70) {
+
+                grade = "C";
+
+            } else if (mark >= 60) {
+
+                grade = "D";
+
+            } else {
+
+                grade = "F";
+            }
+
+            document.getElementById("gradeResult").innerHTML =
+                "Your Grade: " + grade;
+        }
+
+    </script>
+
+</body>
+</html>

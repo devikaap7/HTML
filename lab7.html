@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Slice of Spice</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fff8e7;
+            color: #3b2416;
+        }
+
+        nav {
+            background-color: #4b241c;
+            padding: 18px;
+            text-align: center;
+        }
+
+        nav button {
+            background-color: #d4a017;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        nav button:hover {
+            background-color: #b8860b;
+        }
+
+        .page {
+            display: none;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .active {
+            display: block;
+        }
+
+        h1 {
+            color: #4b241c;
+            font-size: 38px;
+        }
+
+        h2 {
+            color: #7a3e2e;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .food {
+            background-color: white;
+            width: 220px;
+            padding: 22px;
+            border-radius: 12px;
+            border: 2px solid #d4a017;
+            box-shadow: 0 4px 10px rgba(75, 36, 28, 0.2);
+        }
+
+        .food h2 {
+            color: #4b241c;
+        }
+
+        .food p {
+            color: #b8860b;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .food button,
+        .main-button {
+            padding: 11px 20px;
+            border: none;
+            background-color: #4b241c;
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .food button:hover,
+        .main-button:hover {
+            background-color: #7a3e2e;
+        }
+
+        input {
+            padding: 11px;
+            margin: 10px;
+            border: 1px solid #d4a017;
+            border-radius: 5px;
+        }
+
+        .order-box {
+            background-color: white;
+            width: 500px;
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #d4a017;
+            box-shadow: 0 4px 10px rgba(75, 36, 28, 0.2);
+        }
+
+        li {
+            margin: 10px;
+            list-style: none;
+            color: #4b241c;
+        }
+
+        .status {
+            font-weight: bold;
+            color: #b8860b;
+        }
+
+        footer {
+            background-color: #4b241c;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     NAVIGATION
+============================== -->
+
+<nav>
+
+    <button onclick="showPage('menuPage')">
+        🍽️ MENU
+    </button>
+
+    <button onclick="showPage('orderPage')">
+        🛒 CUSTOMER ORDER
+    </button>
+
+    <button onclick="showPage('chefPage')">
+        👨‍🍳 CHEF
+    </button>
+
+    <button onclick="showPage('waiterPage')">
+        🧑‍🍳 WAITER
+    </button>
+
+</nav>
+
+
+<!-- ==============================
+     MENU PAGE
+============================== -->
+
+<div id="menuPage" class="page active">
+
+    <h1>🍽️ SLICE OF SPICE</h1>
+
+    <h2>Welcome to Slice of Spice</h2>
+
+    <p>Select your favourite food and add it to your order.</p>
+
+
+    <div class="menu">
+
+
+        <!-- CHICKEN BIRYANI -->
+
+        <div class="food">
+
+            <h2>🍗 Chicken Biryani</h2>
+
+            <p>₹180</p>
+
+            <input
+                type="number"
+                id="biryaniQty"
+                value="1"
+                min="1"
+            >
+
+            <br>
+
+            <button
+                onclick="addFood(
+                    'Chicken Biryani',
+                    180,
+                    'biryaniQty'
+                )"
+            >
+                Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- FRIED RICE -->
+
+        <div class="food">
+
+            <h2>🍚 Fried Rice</h2>
+
+            <p>₹120</p>
+
+            <input
+                type="number"
+                id="riceQty"
+                value="1"
+                min="1"
+            >
+
+            <br>
+
+            <button
+                onclick="addFood(
+                    'Fried Rice',
+                    120,
+                    'riceQty'
+                )"
+            >
+                Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- MASALA DOSA -->
+
+        <div class="food">
+
+            <h2>🥞 Masala Dosa</h2>
+
+            <p>₹80</p>
+
+            <input
+                type="number"
+                id="dosaQty"
+                value="1"
+                min="1"
+            >
+
+            <br>
+
+            <button
+                onclick="addFood(
+                    'Masala Dosa',
+                    80,
+                    'dosaQty'
+                )"
+            >
+                Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- PANEER -->
+
+        <div class="food">
+
+            <h2>🥘 Paneer Butter Masala</h2>
+
+            <p>₹150</p>
+
+            <input
+                type="number"
+                id="paneerQty"
+                value="1"
+                min="1"
+            >
+
+            <br>
+
+            <button
+                onclick="addFood(
+                    'Paneer Butter Masala',
+                    150,
+                    'paneerQty'
+                )"
+            >
+                Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- AL FAHAM MANDI -->
+
+        <div class="food">
+
+            <h2>🍗 Al Faham Mandi</h2>
+
+            <p>₹320</p>
+
+            <input
+                type="number"
+                id="mandiQty"
+                value="1"
+                min="1"
+            >
+
+            <br>
+
+            <button
+                onclick="addFood(
+                    'Al Faham Mandi',
+                    320,
+                    'mandiQty'
+                )"
+            >
+                Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- AL FAHAM -->
+
+        <div class="food">
+
+            <h2>🍗 Al Faham</h2>
+
+            <p>₹280</p>
+
+            <input
+                type="number"
+                id="alfahamQty"
+                value="1"
+                min="1"
+            >
+
+            <br>
+
+            <button
+                onclick="addFood(
+                    'Al Faham',
+                    280,
+                    'alfahamQty'
+                )"
+            >
+                Add to Order
+            </button>
+
+        </div>
+
+
+        <!-- HONEY AL FAHAM -->
+
+        <div class="food">
+
+            <h2>🍯 Honey Al Faham</h2>
+
+            <p>₹320</p>
+
+            <input
+                type="number"
+                id="honeyQty"
+                value="1"
+                min="1"
+            >
+
+            <br>
+
+            <button
+                onclick="addFood(
+                    'Honey Al Faham',
+                    320,
+                    'honeyQty'
+                )"
+            >
+                Add to Order
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <h2 id="addedMessage"></h2>
+
+</div>
+
+
+<!-- ==============================
+     CUSTOMER ORDER PAGE
+============================== -->
+
+<div id="orderPage" class="page">
+
+    <h1>🛒 CUSTOMER ORDER</h1>
+
+
+    <div class="order-box">
+
+        <h2>Customer Details</h2>
+
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Customer Name"
+        >
+
+        <br>
+
+
+        <input
+            type="text"
+            id="tableNumber"
+            placeholder="Table Number"
+        >
+
+
+        <h2>Selected Food</h2>
+
+
+        <ul id="cartList"></ul>
+
+
+        <h2 id="cartTotal">
+            Total: ₹0
+        </h2>
+
+
+        <button
+            class="main-button"
+            onclick="placeOrder()"
+        >
+            PLACE ORDER
+        </button>
+
+
+        <h2 id="orderMessage"></h2>
+
+    </div>
+
+</div>
+
+
+<!-- ==============================
+     CHEF PAGE
+============================== -->
+
+<div id="chefPage" class="page">
+
+    <h1>👨‍🍳 CHEF DASHBOARD</h1>
+
+    <h2>Orders Waiting for Preparation</h2>
+
+    <div id="chefOrders"></div>
+
+</div>
+
+
+<!-- ==============================
+     WAITER PAGE
+============================== -->
+
+<div id="waiterPage" class="page">
+
+    <h1>🧑‍🍳 WAITER DASHBOARD</h1>
+
+    <h2>Food Ready for Delivery</h2>
+
+    <div id="waiterOrders"></div>
+
+</div>
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+    🍽️ SLICE OF SPICE © 2026
+
+</footer>
+
+
+<!-- ==============================
+     JAVASCRIPT
+============================== -->
+
+<script>
+
+
+let cart = [];
+
+let orders = [];
+
+
+// ==============================
+// SHOW PAGE
+// ==============================
+
+function showPage(pageId) {
+
+    let pages =
+        document.querySelectorAll(".page");
+
+    for (let i = 0; i < pages.length; i++) {
+
+        pages[i].classList.remove("active");
+
+    }
+
+    document
+        .getElementById(pageId)
+        .classList.add("active");
+
+    displayCart();
+
+    displayChefOrders();
+
+    displayWaiterOrders();
+
+}
+
+
+// ==============================
+// ADD FOOD
+// ==============================
+
+function addFood(name, price, inputId) {
+
+    let quantity =
+        Number(
+            document.getElementById(inputId).value
+        );
+
+    if (quantity <= 0) {
+
+        alert("Please enter a valid quantity.");
+
+        return;
+
+    }
+
+    let item = {
+
+        name: name,
+
+        price: price,
+
+        quantity: quantity
+
+    };
+
+    cart.push(item);
+
+    document
+        .getElementById("addedMessage")
+        .innerHTML =
+        "✅ " + name + " added to your order!";
+
+    displayCart();
+
+}
+
+
+// ==============================
+// DISPLAY CART
+// ==============================
+
+function displayCart() {
+
+    let list =
+        document.getElementById("cartList");
+
+    let totalElement =
+        document.getElementById("cartTotal");
+
+    if (!list) {
+
+        return;
+
+    }
+
+    list.innerHTML = "";
+
+    let total = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+
+        let item = cart[i];
+
+        let itemTotal =
+            item.price * item.quantity;
+
+        total += itemTotal;
+
+        let li =
+            document.createElement("li");
+
+        li.innerHTML =
+            item.name +
+            " × " +
+            item.quantity +
+            " = ₹" +
+            itemTotal;
+
+        list.appendChild(li);
+
+    }
+
+    totalElement.innerHTML =
+        "Total: ₹" + total;
+
+}
+
+
+// ==============================
+// PLACE ORDER
+// ==============================
+
+function placeOrder() {
+
+    let customer =
+        document
+        .getElementById("customerName")
+        .value;
+
+    let table =
+        document
+        .getElementById("tableNumber")
+        .value;
+
+    if (customer === "" || table === "") {
+
+        alert(
+            "Please enter customer name and table number."
+        );
+
+        return;
+
+    }
+
+    if (cart.length === 0) {
+
+        alert(
+            "Please add food to the order."
+        );
+
+        return;
+
+    }
+
+    let newOrder = {
+
+        id: orders.length + 1,
+
+        customer: customer,
+
+        table: table,
+
+        items: cart,
+
+        status: "Pending"
+
+    };
+
+    orders.push(newOrder);
+
+    cart = [];
+
+    document
+        .getElementById("customerName")
+        .value = "";
+
+    document
+        .getElementById("tableNumber")
+        .value = "";
+
+    displayCart();
+
+    displayChefOrders();
+
+    document
+        .getElementById("orderMessage")
+        .innerHTML =
+        "✅ Order #" +
+        newOrder.id +
+        " sent to the kitchen!";
+
+}
+
+
+// ==============================
+// CHEF ORDERS
+// ==============================
+
+function displayChefOrders() {
+
+    let container =
+        document.getElementById("chefOrders");
+
+    if (!container) {
+
+        return;
+
+    }
+
+    container.innerHTML = "";
+
+    for (let i = 0; i < orders.length; i++) {
+
+        let order = orders[i];
+
+        if (order.status === "Pending") {
+
+            let box =
+                document.createElement("div");
+
+            box.className =
+                "order-box";
+
+            let html =
+                "<h2>Order #" +
+                order.id +
+                "</h2>";
+
+            html +=
+                "<p><b>Customer:</b> " +
+                order.customer +
+                "</p>";
+
+            html +=
+                "<p><b>Table:</b> " +
+                order.table +
+                "</p>";
+
+            html += "<h3>Food:</h3>";
+
+            html += "<ul>";
+
+            for (
+                let j = 0;
+                j < order.items.length;
+                j++
+            ) {
+
+                html +=
+                    "<li>" +
+                    order.items[j].name +
+                    " × " +
+                    order.items[j].quantity +
+                    "</li>";
+
+            }
+
+            html += "</ul>";
+
+            html +=
+                "<p class='status'>" +
+                "Status: Pending ⏳" +
+                "</p>";
+
+            html +=
+                "<button " +
+                "class='main-button' " +
+                "onclick='foodReady(" +
+                order.id +
+                ")'>" +
+                "FOOD READY ✓" +
+                "</button>";
+
+            box.innerHTML = html;
+
+            container.appendChild(box);
+
+        }
+
+    }
+
+}
+
+
+// ==============================
+// FOOD READY
+// ==============================
+
+function foodReady(orderId) {
+
+    for (let i = 0; i < orders.length; i++) {
+
+        if (orders[i].id === orderId) {
+
+            orders[i].status = "Ready";
+
+        }
+
+    }
+
+    displayChefOrders();
+
+    displayWaiterOrders();
+
+    alert(
+        "🍽️ Food is ready! Waiter has been notified."
+    );
+
+}
+
+
+// ==============================
+// WAITER ORDERS
+// ==============================
+
+function displayWaiterOrders() {
+
+    let container =
+        document.getElementById("waiterOrders");
+
+    if (!container) {
+
+        return;
+
+    }
+
+    container.innerHTML = "";
+
+    for (let i = 0; i < orders.length; i++) {
+
+        let order = orders[i];
+
+        if (order.status === "Ready") {
+
+            let box =
+                document.createElement("div");
+
+            box.className =
+                "order-box";
+
+            let html =
+                "<h2>Order #" +
+                order.id +
+                "</h2>";
+
+            html +=
+                "<p><b>Customer:</b> " +
+                order.customer +
+                "</p>";
+
+            html +=
+                "<p><b>Table:</b> " +
+                order.table +
+                "</p>";
+
+            html += "<h3>Food:</h3>";
+
+            html += "<ul>";
+
+            for (
+                let j = 0;
+                j < order.items.length;
+                j++
+            ) {
+
+                html +=
+                    "<li>" +
+                    order.items[j].name +
+                    " × " +
+                    order.items[j].quantity +
+                    "</li>";
+
+            }
+
+            html += "</ul>";
+
+            html +=
+                "<p class='status'>" +
+                "Status: Food Ready 🍽️" +
+                "</p>";
+
+            html +=
+                "<button " +
+                "class='main-button' " +
+                "onclick='deliverOrder(" +
+                order.id +
+                ")'>" +
+                "DELIVERED ✓" +
+                "</button>";
+
+            box.innerHTML = html;
+
+            container.appendChild(box);
+
+        }
+
+    }
+
+}
+
+
+// ==============================
+// DELIVER ORDER
+// ==============================
+
+function deliverOrder(orderId) {
+
+    for (let i = 0; i < orders.length; i++) {
+
+        if (orders[i].id === orderId) {
+
+            orders[i].status = "Delivered";
+
+        }
+
+    }
+
+    displayWaiterOrders();
+
+    alert(
+        "✅ Order delivered successfully!"
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

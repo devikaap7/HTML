@@ -1,0 +1,131 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#eef2f7;
+}
+
+/* Home Page */
+
+#home{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#16213e,#0f4c81);
+}
+
+.home-box{
+    background:#ffffff;
+    width:350px;
+    padding:40px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+}
+
+.home-box h1{
+    color:#0f4c81;
+    margin-bottom:30px;
+    font-size:34px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:#0f4c81;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1363a2;
+    transform:translateY(-3px);
+}
+
+/* Result Page */
+
+#result{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f5f7fb;
+}
+
+.result-box{
+    width:450px;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.result-box h2{
+    text-align:center;
+    color:#0f4c81;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+    margin-bottom:10px;
+}
+
+input:focus,
+select:focus{
+    border-color:#0f4c81;
+}
+
+button{
+    width:100%;
+    padding:13px;
+    margin-top:20px;
+    border:none;
+    border-radius:8px;
+    background:#0f4c81;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1363a2;
+}
+
+.back{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    text-decoration:none;
+    color:#0f4c81;
+    font-weight:bold;
+}
+
+.back:hover{
+    text-decoration:underline;
+}

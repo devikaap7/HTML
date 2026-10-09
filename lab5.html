@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">         
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+    body{
+        background:linear-gradient(270deg,#f4f6fb,#dbeafe,#bfdbfe,#f4f6fb);
+        background-size:400% 400%;
+        animation:bgMove 12s ease infinite;
+        color:#333;
+
+    }
+    @keyframes bgMove{
+        0%{background-position:0% 50%;}
+        50%{background-position:100% 50%;}
+        100%{background-position:0% 50%;}
+    }
+    /* Header */
+    header{
+        background:#0f172a;
+        color:white;
+        padding:15px 8%;
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    nav a{
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: bold;
+    }
+    nav a:hover{
+        color: #38bdf8;
+    }
+    /* Hero */
+    .hero{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap: 40px;
+        padding: 60px 8%;
+        background:linear-gradient(135deg,#2563eb,#0ea5e9);
+        color:white;
+        flex-wrap: wrap;
+    }
+
+    .hero-text{
+        flex:1 1 350px;
+    }
+    .hero-text h1{
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+    .hero-text p{
+        margin-bottom: 20px;
+       line-height:1.6;
+    }
+    .btn{
+        display:inline-block;
+        padding:12px 22px;
+        background:white;
+        color:#2563eb;
+        text-decoration: none;
+        border-radius:25px;
+        font-weight: bold;
+        transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .btn:hover{
+        transform:translateY(-3px);
+        box-shadow:0 8px 18px rgba(0,0,0,0.2);
+    }
+    .hero-image{
+        flex:1 1 350px;
+        text-align:center;
+        animation: float 3s ease-in-out infinite;
+    }
+    .hero-image img{
+        width:100%;
+        max-width:450px;
+        border-radius:15px;
+        box-shadow: 0 8 px 20px rgba(0,0,0,0.2);
+        transition: transform 0.4s ease ,box-shadow 0.4s ease;
+    }
+    .hero-image img:hover{
+        transform: scale(1.05);
+        box-shadow: 0 12px 28px rgba(0,0,0,28);
+    }
+    @keyframes float{
+        0%,100%{transform:translateY(0px);}
+        50%{transform:translateY(-10px);}
+        100%{transform:translateY(0px);}
+    }
+    /*features*/
+    .features h2{
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+
+    .feature-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+    }
+    .card{
+        background:white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow:0 4px 12px rgba(0,0,0,0.8);
+        transition: transform 0.3s ease;
+    }
+    .card:hover{
+        transform: translateY(-5px);
+    }
+    .card h3{
+        margin-bottom: 10px;
+        color:#2563eb;
+    }
+    /*Footer*/
+    footer{
+        background: #0f172a;
+        color:white;
+        text-align:center;
+        padding: 20px;
+        margin-top: 40px;
+   }
+   @media(max-width:768px){
+    header{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero{
+        flex-direction: column;
+        text-align:center;
+    }
+    .hero-text h1{
+        font-size: 2.2rem;
+    }
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

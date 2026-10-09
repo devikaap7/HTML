@@ -1,0 +1,133 @@
+```css
+/* Body */
+
+body {
+    font-family: Arial;
+    background-color: #fff0f5;
+    margin: 0;
+}
+
+
+/* Header */
+
+header {
+    background-color: #d63384;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Navigation */
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+
+/* Home Section */
+
+#home {
+    background-color: #ffe4ec;
+    color: #333;
+    padding: 40px;
+    text-align: center;
+}
+
+#home h2 {
+    color: #d63384;
+}
+
+#home a {
+    background-color: #d63384;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+
+/* Products Section */
+
+#products {
+    padding: 40px;
+    text-align: center;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Product */
+
+.product {
+    background-color: white;
+    border: 1px solid #d63384;
+    width: 220px;
+    margin: 10px;
+    padding: 15px;
+}
+
+.product img {
+    width: 200px;
+    height: 150px;
+}
+
+.product h3 {
+    color: #d63384;
+}
+
+.product a {
+    background-color: #d63384;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+}
+
+
+/* Hover Effect */
+
+.product:hover {
+    background-color: #ffe4ec;
+}
+
+
+/* Price Table */
+
+#price {
+    padding: 40px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #d63384;
+    color: white;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #d63384;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+```

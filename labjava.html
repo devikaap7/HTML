@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Fundamentals Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+
+        #output {
+            background-color: #657a11;
+            color: #d08412;
+            padding: 20px;
+            font-family: monospace;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>JavaScript Fundamentals</h2>
+
+    <div id="output"></div>
+
+    <script>
+
+        const display = document.getElementById("output");
+
+        function printOutput(text) {
+            display.innerHTML += text + "<br><br>";
+        }
+
+
+        // 1. Variables and Datatypes
+
+        let studentName = "Kumar";
+        const studentAge = 20;
+        let isEnrolled = true;
+        let subject = ["Math", "CS"];
+
+        printOutput(`
+            <b>1. Variables & Datatypes:</b><br>
+            Name: ${studentName} (String)<br>
+            Age: ${studentAge} (Number)<br>
+            Enrolled: ${isEnrolled} (Boolean)<br>
+            Subjects: ${subject.join(", ")} (Array)
+        `);
+
+
+        // 2. Operators
+
+        let num1 = 15;
+        let num2 = 5;
+
+        let addition = num1 + num2;
+        let isGreater = num1 > num2;
+
+        printOutput(`
+            <b>2. Operators:</b><br>
+            ${num1} + ${num2} = ${addition}<br>
+            Is ${num1} greater than ${num2}? ${isGreater}
+        `);
+
+
+        // 3. Conditional Statements (If-Else)
+
+        let passMark = 40;
+        let studentScore = 75;
+        let resultMessage = "";
+
+        if (studentScore >= passMark) {
+            resultMessage = "Student has Passed!";
+        } else {
+            resultMessage = "Student has Failed.";
+        }
+
+        printOutput(`
+            <b>3. Conditional Statements:</b><br>
+            Score: ${studentScore}<br>
+            ${resultMessage}
+        `);
+
+
+        // 4. Loop
+
+        let loopOutput = "Counting: ";
+
+        for (let i = 1; i <= 3; i++) {
+            loopOutput += i + " ";
+        }
+
+        printOutput(`
+            <b>4. Loop:</b><br>
+            ${loopOutput}
+        `);
+
+
+        // 5. Functions
+
+        function calculateArea(length, width) {
+            return length * width;
+        }
+
+        let area = calculateArea(10, 5);
+
+        printOutput(`
+            <b>5. Functions:</b><br>
+            Area of a 10 x 5 rectangle is: ${area}
+        `);
+
+    </script>
+
+</body>
+
+</html>

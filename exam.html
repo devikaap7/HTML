@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Showcase</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #222;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: orange;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: orange;
+            color: white;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        /* Product Grid */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px;
+        }
+
+        /* Product Card */
+        .product {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px gray;
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            width: 100%;
+            max-width: 250px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product h2 {
+            margin: 15px 0 10px;
+        }
+
+        .product p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: green;
+        }
+
+        /* Price Table */
+        .price-table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        .price-table th,
+        .price-table td {
+            border: 1px solid #555;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .price-table th {
+            background-color: #222;
+            color: white;
+        }
+
+        /* Button */
+        button {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkorange;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px;
+            }
+
+            .price-table {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Prices</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Product Showcase</h1>
+        <p>Explore our latest products</p>
+    </header>
+
+    <!-- Products -->
+    <section class="products">
+
+        <div class="product">
+            <img src="https://via.placeholder.com/250x200" alt="Laptop">
+            <h2>Laptop</h2>
+            <p>High-performance laptop suitable for students and professionals.</p>
+            <p class="price">₹50,000</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/250x200" alt="Smartphone">
+            <h2>Smartphone</h2>
+            <p>Modern smartphone with excellent camera and battery life.</p>
+            <p class="price">₹25,000</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://via.placeholder.com/250x200" alt="Headphones">
+            <h2>Headphones</h2>
+            <p>Wireless headphones with high-quality sound and comfort.</p>
+            <p class="price">₹3,000</p>
+            <button>Buy Now</button>
+        </div>
+
+    </section>
+
+    <!-- Price Table -->
+    <h2 style="text-align:center;">Price Comparison</h2>
+
+    <table class="price-table">
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Availability</th>
+        </tr>
+
+        <tr>
+            <td>Laptop</td>
+            <td>₹50,000</td>
+            <td>Available</td>
+        </tr>
+
+        <tr>
+            <td>Smartphone</td>
+            <td>₹25,000</td>
+            <td>Available</td>
+        </tr>
+
+        <tr>
+            <td>Headphones</td>
+            <td>₹3,000</td>
+            <td>Available</td>
+        </tr>
+    </table>
+
+</body>
+</html>
